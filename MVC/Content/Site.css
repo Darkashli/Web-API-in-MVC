@@ -1,0 +1,126 @@
+﻿body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e6f0ff;
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+}
+
+
+.container {
+    padding-top: 15px;
+    background-color: #1a75ff;
+    width: 950px;
+    height: 100%;
+}
+
+ 
+
+input,
+select,
+textarea {
+    max-width: 300px;
+}
+
+
+footer, p {
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.nav-link {
+    font-family: 'Times New Roman';
+    text-decoration-style: none;
+}
+
+
+
+.navbar-brand{
+    font-weight: bolder;
+}
+
+.dropdown-toggle{
+    font-family: 'Times New Roman';
+}
+
+.dropDownItem{
+    font-family: 'Times New Roman';
+}
+
+
+
+.form-group {
+    display: inline;
+      
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #e6f0ff;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #e6f0ff;
+}
+
+p {
+    padding: 5px;
+    text-align: center;
+    color: #e6f0ff;
+}
+
+.lead{
+    text-align: left;
+}
+
+small.text {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #e6f0ff;
+}
+
+label {
+    color: #e6f0ff;
+    display: inline;
+   
+}
+
+
+legend {
+    color: #e6f0ff;
+}
+
+address {
+    text-align: center;
+    
+    color: #e6f0ff;
+
+}
+
+.form-check-input {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 45px;
+    color: #e6f0ff;
+}
+
+table,th, td{
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.email {
+    background-color: #e6f0ff;
+    
+ 
+}
+
+

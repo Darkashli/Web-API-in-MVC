@@ -1,0 +1,133 @@
+﻿@model mvcEmployeeModel
+@ViewBag.Title
+
+@using (Html.BeginForm())
+{
+    <div class="alert-danger">
+        @Html.ValidationSummary()
+    </div>
+
+    <div class="form-horizontal">
+        <fieldset>
+            <legend>Personal info</legend>
+            @Html.HiddenFor(model => model.EmployeeID)
+
+            <div class="form-group">
+                <label for="inputFirstName" class="col-lg-2 control-label">@Html.LabelFor(model => model.FirstName)</label>
+                <div class="col-lg-10">
+                    <div class="col-10 col-form">@Html.EditorFor(model => model.FirstName)</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputLastName" class="col-lg-2 control-label">@Html.LabelFor(model => model.LastName)</label>
+                <div class="col-lg-10">
+                    <div class="col-4 col-form">@Html.EditorFor(model => model.LastName)</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label">@Html.LabelFor(model => model.Gender)</label>
+                <div class="col-lg-10">
+
+                    <div class="form-check-input"> @Html.RadioButtonFor(model => model.Gender, (int)Gender.Male) <i class="fas fa-male"></i> </div>
+                    <div class="form-check-input"> @Html.RadioButtonFor(model => model.Gender, (int)Gender.Female) <i class="fas fa-female"></i></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label">@Html.LabelFor(model => model.Age)</label>
+                <div class="col-lg-10">
+                    <div class="col-4 col-form">@Html.EditorFor(model => model.Age)</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="select" class="col-lg-2 control-label">@Html.LabelFor(model => model.Functions)</label>
+                <div class="col-lg-10">
+                    <div class="col-4 col-form">
+                        @{
+
+                            List<KeyValuePair<string, int>> GetEnumList<T>()
+                            {
+                                var list = new List<KeyValuePair<string, int>>();
+                                foreach (var e in Enum.GetValues(typeof(T)))
+                                {
+                                    list.Add(new KeyValuePair<string, int>(e.ToString(), (int)e));
+                                }
+                                return list;
+                            }
+                            var functions = GetEnumList<Functions>();
+                        }
+
+                        @Html.DropDownList("Functions", new SelectList(functions, "Value", "Key"), new { @class = "form" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAge" class="col-lg-2 control-label">@Html.LabelFor(model => model.Salary)</label>
+                <div class="col-lg-2">
+                    <div class="col-4 col-form">@Html.EditorFor(model => model.Salary)</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAge" class="col-lg-2 control-label">@Html.LabelFor(model => model.HireDate)</label>
+                <div class="col-lg-2">
+                    <div class="col-4 col-form">@Html.EditorFor(model => model.HireDate)</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="textArea" class="col-lg-2 control-label">Notes</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                    <small class="text-muted">You may add some extra info here</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    @section scripts{
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
